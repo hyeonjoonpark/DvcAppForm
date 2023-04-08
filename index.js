@@ -19,6 +19,8 @@ app.use(express.urlencoded({ extended : true }));
 
 app.use(express.json()); // json 형식으로 받습니다.
 
+app.use('/', static(path.join(__dirname, '/'))); // index.html을 static으로 지정합니다.
+
 app.use('/public', static(path.join(__dirname, 'public'))); // public 폴더를 static으로 지정합니다.
 
 app.post('/process/adduser', (req, res) => {
